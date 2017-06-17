@@ -14,7 +14,7 @@ namespace Passenger.Infrastructure.Services
         }
 
         public UserDto Get(string email)
-        {
+        {   
             var user = _userRepository.Get(email);
             
             return new UserDto

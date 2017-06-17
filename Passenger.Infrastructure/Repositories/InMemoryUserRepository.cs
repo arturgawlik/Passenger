@@ -10,10 +10,9 @@ namespace Passenger.Infrastructure.Repositories
     {
         public static ISet<User> _useres = new HashSet<User>
         {
-            new User("user1@op.pl", "hufcio", "tajneHaslo", "3214dqqwdq"),
-            new User("user2@op.pl", "hufcio", "tajneHaslo", "3214dqqwdq"),
-            new User("user3@op.pl", "hufcio", "tajneHaslo", "3214dqqwdq"),
-            new User("user4@op.pl", "hufcio", "tajneHaslo", "3214dqqwdq")
+            new User("user1@op.pl", "hufcio321", "tajneHasl123o", "32121234dqqwdq"),
+            new User("user2@op.pl", "hufcio123", "tajneHaslo321", "3214dqq543wdq"),
+            new User("mail@oppl", "hufciaszek", "passswwwd", "salttttasda")
         };
         public void Add(User user)
         {
@@ -22,8 +21,13 @@ namespace Passenger.Infrastructure.Repositories
 
         public User Get(Guid id) => _useres.Single(x => x.Id == id);
 
-        public User Get(string email) => _useres.Single(x => x.Email == email.ToLowerInvariant());
+        public User Get(string email) 
+        {
+            if(_useres.Single(x => x.Email == email.ToLowerInvariant()) == null)
+                throw new Exception("Email does not Exeist!");
 
+            return _useres.Single(x => x.Email == email.ToLowerInvariant());
+        }
         public IEnumerable<User> GetAll() => _useres;
 
         public void Remove(Guid id)

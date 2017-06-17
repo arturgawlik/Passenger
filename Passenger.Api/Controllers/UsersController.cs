@@ -18,6 +18,12 @@ namespace Passenger.Api.Controllers
         }
 
         [HttpGet("{email}")]
-        public UserDto Get(string email) => _userService.Get(email);
+        public UserDto Get(string email) 
+        {
+            if(_userService.Get(email) == null)
+                throw new Exception($"User with email: '{email}' does not exist.");
+
+            return _userService.Get(email);
+        }
     }
 }
