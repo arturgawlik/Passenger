@@ -60,14 +60,26 @@ namespace Passenger.Core.Domain
                     throw new Exception("Full Name is incorrect!");
             }
          }
-        public DateTime CreatedAt { get; protected set; }
-        
+        public DateTime CreatedAt
+         { 
+             get
+             {
+                 return CreatedAt;
+             } 
+             protected set
+             {
+                if(value > DateTime.UtcNow)
+                    throw  new Exception("Creating date is incorrect!");
+
+                CreatedAt = value;
+             }
+         }
         protected User()
         {
         }
 
         public User(string email, string username, string password, string salt)
-        {//ZADANIE ZROBIC WALIDACJE DLA email jest emailem, username pusty, haslo nie jest puste, dowolne znaki - wyrazenia reguralne
+        {
             Id = Guid.NewGuid();
             Email = email.ToLowerInvariant();
             Username = username;
