@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Passenger.Infrastructure.Commands.Users;
 using Passenger.Infrastructure.DTO;
 using Passenger.Infrastructure.Services;
 
@@ -18,12 +19,12 @@ namespace Passenger.Api.Controllers
         }
 
         [HttpGet("{email}")]
-        public UserDto Get(string email) 
-        {
-            if(_userService.Get(email) == null)
-                throw new Exception($"User with email: '{email}' does not exist.");
+        public Task<UserDto> GetAsync(string email) => _userService.GetAsync(email);
 
-            return _userService.Get(email);
+        [HttpPost("")]
+        public void Post([FromBody]CreateUser request)
+        {
+            _userService.RegisterAsync(request.Email, request.UserName, request.Password);
         }
     }
 }
