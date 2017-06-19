@@ -9,6 +9,9 @@ namespace Passenger.Core.Domain
         public Guid UserId { get; protected set; }
         public Vehicle Vehicle { get; protected set; }
         public Node Address { get; protected set; }
-        
+
+        protected Passenger()
+        {
+        }
     }
 }

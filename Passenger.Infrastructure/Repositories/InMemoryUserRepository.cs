@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Passenger.Core.Domain;
 using Passenger.Core.Repositories;
 
@@ -14,30 +15,27 @@ namespace Passenger.Infrastructure.Repositories
             new User("user2@op.pl", "hufcio123", "tajneHaslo321", "3214dqq543wdq"),
             new User("mail@oppl", "hufciaszek", "passswwwd", "salttttasda")
         };
-        public void Add(User user)
+        public async Task AddAsync(User user)
         {
-            _useres.Add(user);
+            await Task.FromResult(_useres.Add(user));
         }
 
-        public User Get(Guid id) => _useres.Single(x => x.Id == id);
+        public async Task<User> GetAsync(Guid id) => await Task.FromResult(_useres.SingleOrDefault(x => x.Id == id));
 
-        public User Get(string email) 
+        public async Task<User> GetAsync(string email) => await Task.FromResult(_useres.SingleOrDefault(x => x.Email == email.ToLowerInvariant()));
+
+        public async Task<IEnumerable<User>> GetAllAsync() => await Task.FromResult(_useres);
+
+        public async Task RemoveAsync(Guid id)
         {
-            if(_useres.Single(x => x.Email == email.ToLowerInvariant()) == null)
-                throw new Exception("Email does not Exeist!");
-
-            return _useres.Single(x => x.Email == email.ToLowerInvariant());
-        }
-        public IEnumerable<User> GetAll() => _useres;
-
-        public void Remove(Guid id)
-        {
-            var user = Get(id);
+            var user = await GetAsync(id);
             _useres.Remove(user);
+            await Task.CompletedTask;
         }
 
-        public void Update(User user)
+        public async Task UpdateAsync(User user)
         {
+            await Task.CompletedTask;
         }
     }
 }

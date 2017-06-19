@@ -5,5 +5,9 @@ namespace Passenger.Core.Domain
         public string Addres { get; protected set; }
         public double Longitude { get; protected set; }
         public double Latitude { get; protected set; }
+
+        protected Node()
+        {
+        }
     }
 }
