@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Passenger.Core.Domain
 {
@@ -13,5 +12,33 @@ namespace Passenger.Core.Domain
         protected Passenger()
         {
         }
+
+        public Passenger(Guid id, Guid userId, Vehicle vehicle, Node addres)
+        {
+            SetId(id);
+            SetUserId(userId);
+            SetVehicle(vehicle);
+            SetAddres(addres);
+        }
+
+        protected void SetId(Guid id)
+        {
+            Id = id;
+        }
+
+		protected void SetUserId(Guid userId)
+		{
+            UserId = userId;
+		}
+
+		protected void SetVehicle(Vehicle vehicle)
+		{
+            Vehicle = vehicle;
+		}
+
+		protected void SetAddres(Node addres)
+		{
+            Address = addres;
+		}
     }
 }

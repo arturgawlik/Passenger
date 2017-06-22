@@ -8,5 +8,22 @@ namespace Passenger.Core.Domain
         protected PassengerNode()
         {
         }
+
+        public PassengerNode(Node node, Passenger passenger)
+        {
+            SetNode(node);
+            SetPassenger(passenger);
+        }
+
+
+        protected void SetNode(Node node)
+        {
+            Node = node;
+        }
+
+        protected void SetPassenger(Passenger passenger)
+        {
+            Passenger = passenger;
+        }
     }
 }
