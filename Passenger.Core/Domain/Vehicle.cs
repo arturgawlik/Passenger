@@ -18,21 +18,21 @@ namespace Passenger.Core.Domain
             SetSeats(seats);
         }
 
-        private void SetBrand(string brand)
+        protected void SetBrand(string brand)
         {
             if(string.IsNullOrWhiteSpace(brand))
                 throw new Exception("Brand can not be empty.");
 
             Brand = brand;
         }
-        private void SetName(string name)
+        protected void SetName(string name)
         {
             if(string.IsNullOrWhiteSpace(name))
                 throw new Exception("Car name can not be empty.");
             
             Name = name;
         }
-        private void SetSeats(int seats)
+        protected void SetSeats(int seats)
         {
             if(seats < 0 || seats > 99 )
                 throw new Exception("There can not be less than 0 and more than 99 seats.");
