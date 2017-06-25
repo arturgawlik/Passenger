@@ -1,5 +1,4 @@
 using System;
-using System.Text.RegularExpressions;
 
 namespace Passenger.Core.Domain
 {
@@ -39,8 +38,8 @@ namespace Passenger.Core.Domain
             if(string.IsNullOrWhiteSpace(username))
                 throw new Exception("Username can not be empty.");
             
-            if(username.Length <= 5 || username.Length >= 99)
-                throw new Exception("Username can not be shorter than 5 and Longer than 99 charaters.");
+            if(username.Length <= 2 || username.Length >= 99)
+                throw new Exception("Username can not be shorter than 2 and Longer than 99 charaters.");
 
             Username = username;
         }
