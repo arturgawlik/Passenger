@@ -9,7 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passenger.Core", "..\Passen
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passenger.Tests", "..\Passenger.Tests\Passenger.Tests.csproj", "{48091DC0-5B17-4A8B-AC8A-6080B453BD8C}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passenger.Tests", "..\Passenger.Tests.EndToEnd\Passenger.Tests.csproj", "{26FD47CD-5616-4D4F-8AD1-B67629945708}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passenger.Tests.EndToEnd", "..\Passenger.Tests.EndToEnd\Passenger.Tests.EndToEnd.csproj", "{459D8843-E068-479F-8673-6A54423DB509}"
+>>>>>>> d69ef3b50bbd70b51db4b0add5a804ddb97549d5
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{48091DC0-5B17-4A8B-AC8A-6080B453BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48091DC0-5B17-4A8B-AC8A-6080B453BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48091DC0-5B17-4A8B-AC8A-6080B453BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{26FD47CD-5616-4D4F-8AD1-B67629945708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26FD47CD-5616-4D4F-8AD1-B67629945708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26FD47CD-5616-4D4F-8AD1-B67629945708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26FD47CD-5616-4D4F-8AD1-B67629945708}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{459D8843-E068-479F-8673-6A54423DB509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459D8843-E068-479F-8673-6A54423DB509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459D8843-E068-479F-8673-6A54423DB509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459D8843-E068-479F-8673-6A54423DB509}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> d69ef3b50bbd70b51db4b0add5a804ddb97549d5
 	EndGlobalSection
 EndGlobal
