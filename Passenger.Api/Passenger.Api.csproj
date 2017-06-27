@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../Passenger.Infrastructure/Passenger.Infrastructure.csproj" />
+    <ProjectReference Include="..\Passenger.Core\Passenger.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
