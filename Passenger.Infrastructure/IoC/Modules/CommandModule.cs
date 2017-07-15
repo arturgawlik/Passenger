@@ -4,6 +4,7 @@ using Passenger.Infrastructure.Commands;
 
 namespace Passenger.Infrastructure.IoC.Modules
 {
+    //Autofac how to dispatch configuration
     public class CommandModule : Autofac.Module
     {
         protected override void Load(ContainerBuilder builder)

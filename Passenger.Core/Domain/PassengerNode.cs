@@ -9,7 +9,7 @@ namespace Passenger.Core.Domain
         {
         }
 
-        public PassengerNode(Node node, Passenger passenger)
+        protected PassengerNode(Passenger passenger, Node node)
         {
             SetNode(node);
             SetPassenger(passenger);
@@ -25,5 +25,6 @@ namespace Passenger.Core.Domain
         {
             Passenger = passenger;
         }
+        public static PassengerNode Create(Passenger passenger, Node node) => new PassengerNode(passenger, node);
     }
 }

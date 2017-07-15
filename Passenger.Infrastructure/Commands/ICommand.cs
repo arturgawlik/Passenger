@@ -1,6 +1,6 @@
 namespace Passenger.Infrastructure.Commands.Users
 {
-    //Markre Interface
+    //Marker Interface
     public interface ICommand
     {
     }
